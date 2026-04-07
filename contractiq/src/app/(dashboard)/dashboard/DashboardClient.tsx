@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
 import { JobStatus } from '@/lib/types/database'
+import PWAInstallPrompt from '@/components/PWAInstallPrompt'
 
 const STATUS_STYLES: Record<JobStatus, string> = {
   draft: 'bg-gray-100 text-gray-600',
@@ -102,6 +103,9 @@ export default function DashboardClient({ initialJobs, userId, pipelineValue: in
           </button>
         </div>
       )}
+
+      {/* PWA install prompt */}
+      <PWAInstallPrompt />
 
       {/* Header */}
       <div className="flex items-center justify-between">
